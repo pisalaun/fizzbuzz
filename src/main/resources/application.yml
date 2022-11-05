@@ -1,0 +1,19 @@
+server:
+  port: 8443
+
+management:
+  server:
+    port: 8001
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+  metrics:
+    export:
+      elastic:
+        host: http://localhost:9200/
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
